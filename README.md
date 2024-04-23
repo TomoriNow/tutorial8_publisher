@@ -15,3 +15,10 @@ _ = p.publish_event("user_created".to_owned(), UserCreatedEventMessage { user_id
 - The url of: “amqp://guest:guest@localhost:5672” is the same as in the subscriber program, what does it mean? 
 
 Since the url of “amqp://guest:guest@localhost:5672” is the same as in the subscriber program, this means that the subscriber and publisher are configured to connect to the same message broker instance. This ensures that messages published by the publisher are sent to the correct message queue and can be consumed by the subscriber. It establishes a communication channel between the two components of the system, allowing them to exchange messages seamlessly.
+
+-------------------------------------------------------------------------------------------------------------
+# Screenshots
+
+## Running RabbitMQ
+
+![Screenshot 2024-04-23 083506.png](assets%2FScreenshot%202024-04-23%20083506.png)
