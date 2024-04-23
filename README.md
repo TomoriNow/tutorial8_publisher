@@ -27,3 +27,10 @@ Since the url of “amqp://guest:guest@localhost:5672” is the same as in the s
 ![Screenshot 2024-04-23 084825.png](assets%2FScreenshot%202024-04-23%20084825.png)
 
 When I run both the subscriber and publisher code, they connect to the same AMQP message broker using the URL "amqp://guest:guest@localhost:5672". The publisher sends messages to the message broker, and the subscriber receives and processes those messages, demonstrating a basic publish-subscribe interaction using AMQP. The subscriber program listens for messages on the "user_created" queue and prints out each message it successfully receives, with a total of 5 messages being successfully received. The publisher program, on the other hand, publishes several UserCreatedEventMessage instances to the "user_created" queue. Each instance represents a user creation event with a unique user ID and name.
+
+## Monitoring chart based on publisher
+![Screenshot 2024-04-23 085533.png](assets%2FScreenshot%202024-04-23%20085533.png)
+
+The chart on the following image depicts the activity of the publisher in sending its message to the subscriber. From the spikes from the second chart, we can understand whether or not the load that the publisher sends is light or heavy by observing the message rates. This can help in understanding how many messages are sent and processed within a particular time frame. Furthermore, the spikes on the chart also represent Consumer acks (coloured purple), which shows the rate at which the messages (from the publisher) are being acknowledged by consumers (the subcscriber).
+
+
