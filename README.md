@@ -22,3 +22,8 @@ Since the url of “amqp://guest:guest@localhost:5672” is the same as in the s
 ## Running RabbitMQ
 
 ![Screenshot 2024-04-23 083506.png](assets%2FScreenshot%202024-04-23%20083506.png)
+
+## Sending and processing event
+![Screenshot 2024-04-23 084825.png](assets%2FScreenshot%202024-04-23%20084825.png)
+
+When I run both the subscriber and publisher code, they connect to the same AMQP message broker using the URL "amqp://guest:guest@localhost:5672". The publisher sends messages to the message broker, and the subscriber receives and processes those messages, demonstrating a basic publish-subscribe interaction using AMQP. The subscriber program listens for messages on the "user_created" queue and prints out each message it successfully receives, with a total of 5 messages being successfully received. The publisher program, on the other hand, publishes several UserCreatedEventMessage instances to the "user_created" queue. Each instance represents a user creation event with a unique user ID and name.
